@@ -1,0 +1,16 @@
+.gradle/
+build/
+run/
+out/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+bin/
+.DS_Store
+*.launch
+.vscode/
+remappedSrc/
+*.jar
+!gradle/wrapper/gradle-wrapper.jar

@@ -1,0 +1,26 @@
+{
+	"schemaVersion": 1,
+	"id": "tameable_rabbits",
+	"version": "${version}",
+	"name": "Tameable Rabbits",
+	"description": "Tame rabbits with carrots. They follow you, sit on command, and no longer raid farms.",
+	"authors": [
+		"bach"
+	],
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.bach.tameablerabbits.TameableRabbits"
+		]
+	},
+	"mixins": [
+		"tameable_rabbits.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.0",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}
