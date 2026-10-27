@@ -1,23 +1,104 @@
-# Tameable Rabbits
+# 🐰 Tameable Rabbits
 
-Fabric-мод для Minecraft **1.20.1**: кроликов можно приручать.
+**Tameable Rabbits** is a Minecraft Fabric mod that allows players to tame rabbits and keep them as companions.
 
-## Как играть
+The mod extends vanilla rabbit behavior with taming, owner-following, sitting, healing, and breeding mechanics.
 
-1. Найдите кролика.
-2. Покормите **морковью** (или золотой морковью / одуванчиком). Шанс приручения — как у кошки, примерно 1 из 3.
-3. Прирученный кролик идёт за хозяином.
-4. ПКМ без еды — сесть / встать.
-5. Морковь лечит и используется для размножения уже прирученных кроликов.
-6. Прирученные кролики не разоряют морковные грядки и не деспавнятся.
+## Features
 
-## Сборка
+- **Rabbit taming** — tame wild rabbits using carrots, golden carrots, or dandelions, with approximately a 1-in-3 success chance.
+- **Follow owner** — tamed rabbits follow their owner around the world.
+- **Sit and stay** — right-click a tamed rabbit with an empty hand to toggle sitting.
+- **Healing and breeding** — use carrots to heal or breed tamed rabbits.
+- **Crop protection** — tamed rabbits no longer destroy carrot crops.
+- **Persistence** — tamed rabbits do not naturally despawn.
 
-Нужны JDK 17+ (компиляция в bytecode 17) и интернет для Gradle.
+## Requirements
+
+| Component | Version |
+|---|---|
+| Minecraft | 1.20.1 |
+| Mod Loader | Fabric |
+| Fabric API | Compatible with Minecraft 1.20.1 |
+| Java | 17+ |
+
+## Installation
+
+1. Install Fabric Loader for Minecraft 1.20.1.
+2. Install the compatible Fabric API.
+3. Build the mod or obtain its JAR file.
+4. Place the JAR in your Minecraft `mods` folder.
+5. Launch Minecraft using the Fabric profile.
+
+## Building from Source
+
+Clone the repository:
 
 ```bash
-export JAVA_HOME=$(/usr/libexec/java_home -v 21)
+git clone https://github.com/bakha312/tameable-rabbits.git
+cd tameable-rabbits
+```
+
+Make sure Java 17 or a compatible JDK is installed.
+
+**Windows (PowerShell):**
+
+```powershell
+.\gradlew.bat build
+```
+
+**Linux / macOS:**
+
+```bash
 ./gradlew build
 ```
 
-Готовый jar: `build/libs/tameable-rabbits-1.0.0.jar`. Положите его в `mods` вместе с Fabric Loader и Fabric API для 1.20.1.
+The compiled mod will be available in:
+
+```text
+build/libs/
+```
+
+## Tech Stack
+
+- Java
+- Fabric API
+- Minecraft 1.20.1
+- Gradle
+- Mixins
+- Git & GitHub
+
+## Project Structure
+
+```text
+src/main/
+├── java/com/bach/tameablerabbits/
+│   ├── TameableRabbits.java
+│   ├── RabbitTameable.java
+│   ├── goal/
+│   │   ├── RabbitFollowOwnerGoal.java
+│   │   └── RabbitSitGoal.java
+│   └── mixin/
+│       ├── RabbitEntityMixin.java
+│       └── RabbitEntityModelMixin.java
+└── resources/
+    ├── assets/tameable_rabbits/lang/
+    ├── fabric.mod.json
+    └── tameable_rabbits.mixins.json
+```
+
+## Development
+
+This project explores extending Minecraft entity behavior using Java and the Fabric modding framework.
+
+Key development areas include:
+
+- Object-oriented programming in Java
+- Entity behavior and AI goals
+- Minecraft entity interaction handling
+- Mixins and game behavior modification
+- Gradle-based project builds
+
+## License
+
+See the [LICENSE](LICENSE) file for license information.
